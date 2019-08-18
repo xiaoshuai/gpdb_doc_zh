@@ -23,15 +23,14 @@
       <ph>使用<codeph>gpbackup</codeph>和<codeph>gprestore</codeph>工具，备份和恢复数据库时，在gp_toolkit模式中所做的任何更改都将丢失。
       </ph>
     </note>
-    <p otherprops="op-print">These are the categories for views in the
-      <codeph>gp_toolkit</codeph>
-      schema.
+    <p otherprops="op-print">
+      如下是<codeph>gp_toolkit</codeph>模式中的视图目录。
     </p>
   </body>
   <topic id="topic2" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Checking for Tables that Need Routine Maintenance</title>
+    <title class="- topic/title ">检查需要日常维护的表</title>
     <body class="- topic/body ">
       <p>The following views can help identify tables that need routine table maintenance (<codeph>VACUUM</codeph> and/or <codeph>
         ANALYZE</codeph>).
@@ -169,7 +168,7 @@
   <topic id="topic5" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Checking for Locks</title>
+    <title class="- topic/title ">检查锁</title>
     <body class="- topic/body ">
       <p>When a transaction accesses a relation (such as a table), it acquires a lock. Depending on
         the type of lock acquired, subsequent transactions may have to wait before they can access
@@ -363,7 +362,7 @@
   <topic id="topic8" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Checking Append-Optimized Tables</title>
+    <title class="- topic/title ">检查附加优化表</title>
     <body class="- topic/body ">
       <p>The <codeph>gp_toolkit</codeph> schema includes a set of diagnostic functions you can use
         to investigate the state of append-optimized tables.
@@ -988,7 +987,7 @@
   <topic id="topic16" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Viewing Greenplum Database Server Log Files</title>
+    <title class="- topic/title ">查看Greenplum数据库服务器日志文件</title>
     <body class="- topic/body ">
       <p>Each component of a Greenplum Database system (master, standby master, primary segments,
         and mirror segments) keeps its own server log files. The <codeph>gp_log_*</codeph> family of views allows you to
@@ -1520,7 +1519,7 @@
   <topic id="topic21" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Checking Server Configuration Files</title>
+    <title class="- topic/title ">检查服务器配置文件</title>
     <body class="- topic/body ">
       <p>Each component of a Greenplum Database system (master, standby master, primary segments,
         and mirror segments) has its own server configuration file (<codeph>postgresql.conf</codeph>). The following <codeph>
@@ -1633,7 +1632,7 @@
   <topic id="topic24" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Checking for Failed Segments</title>
+    <title class="- topic/title ">检查失效的Segment</title>
     <body class="- topic/body ">
       <p>The
         <xref href="#topic25" type="topic" format="dita" class="- topic/xref "/>
@@ -1698,7 +1697,7 @@
     </topic>
   </topic>
   <topic id="topic26x">
-    <title class="- topic/title ">Checking Resource Group Activity and Status</title>
+    <title class="- topic/title ">检查资源组的活动与状态</title>
     <body class="- topic/body ">
       <note>The resource group activity and status views described in this section are valid only
         when resource group-based resource management is active.
@@ -2273,7 +2272,7 @@
   <topic id="topic26" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Checking Resource Queue Activity and Status</title>
+    <title class="- topic/title ">检查资源队列的活动与状态</title>
     <body class="- topic/body ">
       <note>The resource queue activity and status views described in this section are valid only
         when resource queue-based resource management is active.
@@ -2618,7 +2617,7 @@
          ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Checking Query Disk Spill Space Usage</title>
+    <title class="- topic/title ">检查查询磁盘溢出空间使用情况</title>
     <body class="- topic/body ">
       <p>The <i class="+ topic/ph hi-d/i ">gp_workfile_*</i> views show information about all the
         queries that are currently using disk spill space. Greenplum Database creates work files on
@@ -2981,7 +2980,7 @@
   <topic id="topic36" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title class="- topic/title ">Viewing Users and Groups (Roles)</title>
+    <title class="- topic/title ">查看用户和组（角色）</title>
     <body class="- topic/body ">
       <p>It is frequently convenient to group users (roles) together to ease management of object
         privileges: that way, privileges can be granted to, or revoked from, a group as a whole. In
@@ -3048,9 +3047,7 @@
   <topic id="topic38" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title id="ie192708" class="- topic/title ">Checking Database Object Sizes and Disk
-      Space
-    </title>
+    <title id="ie192708" class="- topic/title ">检查数据库对象的大小和磁盘空间</title>
     <body class="- topic/body ">
       <p>The <codeph>gp_size_*</codeph> family of views can be used
         to determine the disk space usage for a distributed Greenplum Database, schema, table, or
@@ -3604,7 +3601,7 @@
   <topic id="topic49" xml:lang="en" ditaarch:DITAArchVersion="1.1"
          domains="(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d) (topic indexing-d)"
          class="- topic/topic ">
-    <title id="ie183628" class="- topic/title ">Checking for Uneven Data Distribution</title>
+    <title id="ie183628" class="- topic/title ">检查不均匀的数据分布</title>
     <body class="- topic/body ">
       <p>All tables in Greenplum Database are distributed, meaning their data is divided across all
         of the segments in the system. If the data is not distributed evenly, then query processing
