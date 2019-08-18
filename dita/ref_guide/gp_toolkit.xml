@@ -32,8 +32,8 @@
          class="- topic/topic ">
     <title class="- topic/title ">检查需要日常维护的表</title>
     <body class="- topic/body ">
-      <p>The following views can help identify tables that need routine table maintenance (<codeph>VACUUM</codeph> and/or <codeph>
-        ANALYZE</codeph>).
+      <p>以下视图可帮助识别哪些表需要例行表维护（<codeph>VACUUM</codeph> and/or <codeph>
+        ANALYZE</codeph>）。
       </p>
       <ul class="- topic/ul ">
         <li id="ie194425" class="- topic/li ">
@@ -43,13 +43,11 @@
           <xref href="#topic4" type="topic" format="dita" class="- topic/xref "/>
         </li>
       </ul>
-      <p>The <codeph>VACUUM</codeph> or <codeph>VACUUM FULL</codeph> command reclaims disk space occupied
-        by deleted or obsolete rows. Because of the MVCC transaction concurrency model used in
-        Greenplum Database, data rows that are deleted or updated still occupy physical space on
-        disk even though they are not visible to any new transactions. Expired rows increase table
-        size on disk and eventually slow down scans of the table.
+      <p>该<codeph>VACUUM</codeph>或<codeph>VACUUM FULL</codeph>命令回收被已删除行或过时行所占用的磁盘空间。
+        由于Greenplum数据库中使用的MVCC事务并发模型，删除或更新的数据行仍然占用磁盘上的物理空间，即使它们对任何新事务都不可见。
+        过时的行会增加磁盘上的表大小，并最终减慢表的扫描速度。
       </p>
-      <p>The <codeph>ANALYZE</codeph> command collects column-level
+      <p>该<codeph>ANALYZE</codeph>命令 collects column-level
         statistics needed by the query optimizer. Greenplum Database uses a cost-based query
         optimizer that relies on database statistics. Accurate statistics allow the query optimizer
         to better estimate selectivity and the number of rows retrieved by a query operation in
@@ -63,7 +61,7 @@
       <body class="- topic/body ">
         <p>This view shows regular heap-storage tables that have bloat (the actual number of pages
           on disk exceeds the expected number of pages given the table statistics). Tables that are
-          bloated require a <codeph>VACUUM</codeph> or a <codeph>VACUUM FULL</codeph> in order to reclaim disk space
+          bloated require a <codeph>VACUUM</codeph>或<codeph>VACUUM FULL</codeph> in order to reclaim disk space
           occupied by deleted or obsolete rows. This view is accessible to all users, however
           non-superusers will only be able to see the tables that they have permission to access.
           <note>For diagnostic functions that return append-optimized table information, see<xref
@@ -77,8 +75,8 @@
             <colspec colnum="2" colname="col2" colwidth="267pt" class="- topic/colspec "/>
             <thead class="- topic/thead ">
               <row class="- topic/row ">
-                <entry colname="col1" class="- topic/entry ">Column</entry>
-                <entry colname="col2" class="- topic/entry ">Description</entry>
+                <entry colname="col1" class="- topic/entry ">列名</entry>
+                <entry colname="col2" class="- topic/entry ">描述</entry>
               </row>
             </thead>
             <tbody class="- topic/tbody ">
@@ -177,7 +175,7 @@
         for resource management) also use locks to control the admission of queries into the
         system.
       </p>
-      <p>The <codeph>gp_locks_*</codeph> family of views can help
+      <p>该<codeph>gp_locks_*</codeph> family of views can help
         diagnose queries and sessions that are waiting to access an object due to a lock.
       </p>
       <ul class="- topic/ul ">
@@ -281,7 +279,7 @@
            class="- topic/topic ">
       <title id="ie179843" class="- topic/title ">gp_locks_on_resqueue</title>
       <body class="- topic/body ">
-        <note>The <codeph>gp_locks_on_resqueue</codeph> view is valid only when resource queue-based
+        <note>该<codeph>gp_locks_on_resqueue</codeph> view is valid only when resource queue-based
           resource management is active.
         </note>
         <p>This view shows any locks currently being held on a resource queue, and the associated
@@ -364,7 +362,7 @@
          class="- topic/topic ">
     <title class="- topic/title ">检查附加优化表</title>
     <body class="- topic/body ">
-      <p>The <codeph>gp_toolkit</codeph> schema includes a set of diagnostic functions you can use
+      <p>该<codeph>gp_toolkit</codeph> schema includes a set of diagnostic functions you can use
         to investigate the state of append-optimized tables.
       </p>
       <p>When an append-optimized table (or column-oriented append-optimized table) is created,
@@ -396,7 +394,7 @@
           deleted or updated data rows occupy physical space on disk even though they are hidden to
           new transactions. The configuration parameter
           <codeph>gp_appendonly_compaction</codeph>
-          controls the functionality of the <codeph>VACUUM</codeph> command.
+          controls the functionality of the <codeph>VACUUM</codeph>命令.
         </note>
         <p>This table describes the <cmdname>__gp_aovisimap_compaction_info</cmdname> function
           output table.
@@ -423,7 +421,7 @@
               </row>
               <row>
                 <entry>compaction_possible</entry>
-                <entry>The value is either <codeph>t</codeph> or <codeph>f</codeph>. The value
+                <entry>The value is either <codeph>t</codeph>或<codeph>f</codeph>. The value
                   <codeph>t</codeph>
                   indicates that the data in data file be compacted when a
                   <cmdname>VACUUM</cmdname>
@@ -990,7 +988,7 @@
     <title class="- topic/title ">查看Greenplum数据库服务器日志文件</title>
     <body class="- topic/body ">
       <p>Each component of a Greenplum Database system (master, standby master, primary segments,
-        and mirror segments) keeps its own server log files. The <codeph>gp_log_*</codeph> family of views allows you to
+        and mirror segments) keeps its own server log files. 该<codeph>gp_log_*</codeph> family of views allows you to
         issue SQL
         queries against the server log files to find particular entries of interest. The use of
         these views require superuser permissions.
@@ -1731,7 +1729,7 @@
            class="- topic/topic ">
       <title id="ie193152x" class="- topic/title ">gp_resgroup_config</title>
       <body class="- topic/body ">
-        <p>The <codeph>gp_resgroup_config</codeph> view allows administrators to see the current
+        <p>该<codeph>gp_resgroup_config</codeph> view allows administrators to see the current
           CPU, memory, and concurrency limits for a resource group. The view also displays proposed
           limit settings. A proposed limit will differ from the current limit when the limit has
           been altered, but the new value could not be immediately applied.
@@ -1836,7 +1834,7 @@
            class="- topic/topic ">
       <title id="ie196285" class="- topic/title ">gp_resgroup_status</title>
       <body class="- topic/body ">
-        <p>The <codeph>gp_resgroup_status</codeph> view allows administrators to see status and
+        <p>该<codeph>gp_resgroup_status</codeph> view allows administrators to see status and
           activity for a resource group. It shows how many queries are waiting to run and how many
           queries are currently active in the system for each resource group. The view also displays
           current memory and CPU usage for the resource group.
@@ -1917,7 +1915,7 @@
           </tgroup>
         </table>
         <p></p>
-        <p id="json_field_info1">The <codeph>cpu_usage</codeph> field is a JSON-formatted, key:value
+        <p id="json_field_info1">该<codeph>cpu_usage</codeph> field is a JSON-formatted, key:value
           string that identifies, for each resource group, the per-segment CPU usage percentage. The
           key is segment id, the value is the percentage of CPU usage by the resource group on the
           segment host. The total CPU usage of all segments running on a segment host should not
@@ -1932,7 +1930,7 @@
         <p>In this example, segment <codeph>0</codeph> and segment <codeph>1</codeph> are running on
           the same host; their CPU usage is the same.
         </p>
-        <p id="json_field_info2">The <codeph>memory_usage</codeph> field is also a JSON-formatted,
+        <p id="json_field_info2">该<codeph>memory_usage</codeph> field is also a JSON-formatted,
           key:value string. The string contents differ depending upon the type of resource group.
           For each resource group that you assign to a role (default memory auditor
           <codeph>vmtracker</codeph>), this string identifies the used, available, granted, and
@@ -2093,7 +2091,7 @@
             </tbody>
           </tgroup>
         </table>
-        <p>The <codeph>memory_shared_granted</codeph> value may be less than
+        <p>该<codeph>memory_shared_granted</codeph> value may be less than
           <codeph>memory_shared_proposed</codeph>
           if the cluster does not have enough
           memory to allot. It may be greater than
@@ -2280,7 +2278,7 @@
       <p>The purpose of resource queues is to limit the number of active queries in the system at
         any given time in order to avoid exhausting system resources such as memory, CPU, and disk
         I/O. All database users are assigned to a resource queue, and every statement submitted by a
-        user is first evaluated against the resource queue limits before it can run. The <codeph>gp_resq_*</codeph> family
+        user is first evaluated against the resource queue limits before it can run. 该<codeph>gp_resq_*</codeph> family
         of views can be used to check
         the status of statements currently submitted to the system through their respective resource
         queue. Note that statements issued by superusers are exempt from resource queuing.
@@ -3049,7 +3047,7 @@
          class="- topic/topic ">
     <title id="ie192708" class="- topic/title ">检查数据库对象的大小和磁盘空间</title>
     <body class="- topic/body ">
-      <p>The <codeph>gp_size_*</codeph> family of views can be used
+      <p>该<codeph>gp_size_*</codeph> family of views can be used
         to determine the disk space usage for a distributed Greenplum Database, schema, table, or
         index. The following views calculate the total size of an object across all primary segments
         (mirrors are not included in the size calculations).
